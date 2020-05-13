@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import { makeStyles } from "@material-ui/core/styles";
-import Cards from "../componets/cards";
+import Cards from "../components/cards";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
@@ -18,12 +18,10 @@ const useStyles = makeStyles((theme) => ({
   },
   left: {
     textAlign: "left",
+    
   },
   right: {
     textAlign: "right",
-  },
-  orange: {
-    backgroundColor: "#5433FF",
   },
 }));
 
@@ -52,7 +50,7 @@ export default function Body() {
         and guidance from experienced developers. Think of it as an intensive
         summer senior design course supported by industry advisors.
       </Typography>
-      <Typography variant="h4" align="center">
+      <Typography variant="h4" className={classes.padding1} align="center">
         Our Goal
       </Typography>
       <Divider />
@@ -71,7 +69,7 @@ export default function Body() {
         that provides peer-learning, professional development, mentorships and
         smartly-scoped projects.
       </Typography>
-      <Typography variant="h4" align="center">
+      <Typography variant="h4" className={classes.padding1} align="center">
         Who we are
       </Typography>
       <Divider />
@@ -79,54 +77,17 @@ export default function Body() {
         variant="body1"
         color="textSecondary"
         paragraph
-        
         className={classes.padding1}
         align="center"
       >
-        We are senior developers and tech leads from major US companies. Bios will be added to this site soon.
+        We are senior developers and tech leads from major US companies. Bios
+        will be added to this site soon.
       </Typography>
-      <Typography variant="h4" align="center">
+      <Typography variant="h4" className={classes.padding1} align="center">
         Support Us
       </Typography>
       <Divider />
       <Cards />
-      <Typography variant="h4" align="center">
-        Contact Us
-      </Typography>
-      <Divider />
-      <div className={classes.padding1} />
-      <Grid
-        container
-        spacing={3}
-        alignItems="center"
-        justify="center"
-        direction="row"
-        className={classes.padding1}
-      >
-        <Grid item xs={12} sm={6} className={classes.right}>
-          <Button
-            variant="contained"
-            color="primary"
-            startIcon={<FontAwesomeIcon icon={faDiscord} />}
-            target="_blank"
-            href="https://discord.gg/KNKdGGe"
-          >
-            Join our Discord!
-          </Button>
-        </Grid>
-        <Grid item xs={12} sm={6} className={classes.left}>
-          <Button
-            variant="contained"
-            color="primary"
-            startIcon={<FontAwesomeIcon icon={faPaypal} />}
-            target="_blank"
-            href="https://paypal.me/hackyourown"
-            className={classes.orange}
-          >
-            Donate
-          </Button>
-        </Grid>
-      </Grid>
     </Container>
   );
 }
